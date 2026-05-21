@@ -186,7 +186,7 @@ These recommendations are intended as behavioral risk-management guidelines deri
 # Repository Structure
 
 ```text
-primetrade-trader-sentiment-analysis/
+trader-performance-vs-market-sentiment/
 │
 ├── trader_sentiment_analysis.ipynb
 ├── README.md

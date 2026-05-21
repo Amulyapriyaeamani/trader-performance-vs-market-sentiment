@@ -48,7 +48,7 @@ Due to file size limitations, the raw datasets are not included directly in this
 Datasets can be downloaded from the original sources below:
 
 ## Bitcoin Fear & Greed Dataset
-[<google-drive-link>](https://drive.google.com/file/d/1PgQC0tO8XN-wqkNyghWc_-mnrYv_nhSf/view?usp=sharing)
+(https://drive.google.com/file/d/1PgQC0tO8XN-wqkNyghWc_-mnrYv_nhSf/view?usp=sharing)
 
 ## Hyperliquid Historical Trader Dataset
 [<google-drive-link>](https://drive.google.com/file/d/1IAfLZwu6rJzyWKgBToqwSmmVYU6VbjVs/view?usp=sharing)

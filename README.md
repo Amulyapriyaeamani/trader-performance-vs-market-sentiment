@@ -87,88 +87,120 @@ The analysis focused on:
 
 # Key Insights & Findings
 
-This section summarizes the major behavioral and performance patterns identified during the analysis of trader activity and market sentiment conditions.
+## Insight 1 — Fear Conditions Generated Higher Profitability
+
+Trader profitability was strongest during Fear and Extreme Fear conditions. Fear periods produced the highest average daily PnL (~9,426), compared to ~4,659 during Greed periods.
+
+Fear regimes also showed:
+- higher trade frequency
+- larger trade sizes
+- wider PnL dispersion
+
+This suggests that volatile market conditions created stronger trading opportunities.
+
+**Evidence Pointer:**  
+- Sentiment-wise PnL table  
+- `PnL Distribution by Market Sentiment` boxplot
 
 ---
 
-## Insight 1 — Traders Performed Better During Fear Conditions
+## Insight 2 — High-Activity Traders Outperformed Low-Activity Traders
 
-Average daily profitability was highest during Fear and Extreme Fear market conditions, with Fear periods generating average daily PnL above 9,400 compared to approximately 4,600 during Greed periods.
+High-activity traders significantly outperformed low-activity traders, achieving:
+- ~7x higher average daily PnL
+- higher win rates (~44% vs ~27%)
+- smaller average trade sizes
 
-Additionally, Fear conditions showed larger average trade sizes and wider profitability distributions, indicating increased market volatility and stronger trading opportunities during cautious market environments.
+This suggests that consistent execution was more effective than oversized trades.
 
-This suggests that traders may have benefited from heightened price movements and recovery opportunities during fearful market conditions.
-
----
-
-## Insight 2 — High Activity Traders Demonstrated Stronger Performance
-
-High-activity traders significantly outperformed low-activity traders across both profitability and consistency metrics.
-
-Highly active traders achieved average daily profitability above 11,600 with a win rate of approximately 44%, compared to only 1,600 average daily profitability and 26% win rate for low-activity traders.
-
-Interestingly, high-activity traders used smaller average trade sizes, suggesting that stronger execution and diversified participation may have contributed more to profitability than aggressive position sizing alone.
+**Evidence Pointer:**  
+- Trader activity segmentation table  
+- Profitability group comparison
 
 ---
 
 ## Insight 3 — Strong Long Bias Was Linked to Lower Performance
 
-Non-profitable traders exhibited a noticeably stronger long bias compared to profitable traders.
+Non-profitable traders showed a stronger long bias (~59%) compared to profitable traders (~48%).
 
-While long positioning increased during Fear and Extreme Fear conditions, traders with excessive long exposure achieved lower profitability and weaker win rates overall.
+Long positioning increased during Fear conditions, but excessive long exposure was associated with:
+- lower profitability
+- weaker win rates
+- higher downside volatility
 
-In contrast, short-biased traders generated higher average profitability and stronger trading consistency, suggesting that more balanced or defensive positioning strategies may have been more effective during the analyzed market conditions.
-
----
-
-## Insight 4 — Trader Profitability Was Highly Concentrated
-
-The profitability distribution analysis revealed substantial dispersion across all market sentiment conditions, with multiple extreme positive and negative outliers.
-
-Most trader-day profitability values remained concentrated near lower pnl ranges, while a relatively small subset of traders generated disproportionately large profits or losses.
-
-This indicates that trading performance was highly uneven and that a minority of traders contributed significantly to overall market profitability volatility.
+**Evidence Pointer:**  
+- Long ratio comparison tables  
+- `PnL Distribution by Position Bias` boxplot
 
 ---
 
-## Insight 5 — Market Sentiment Influenced Trader Behavior
+## Insight 4 — Profitability Was Concentrated Among a Small Group of Traders
+
+Trader performance showed extreme dispersion across the dataset.
+
+While most trader-day PnL values remained relatively low, a small subset of traders generated disproportionately large profits and losses:
+- max daily PnL > 533k
+- min daily PnL < -175k
+
+This indicates highly uneven profitability distribution across traders.
+
+**Evidence Pointer:**  
+- `daily_metrics.describe()` summary  
+- PnL distribution boxplots
+
+---
+
+## Insight 5 — Market Sentiment Influenced Trading Behavior
 
 Trader behavior varied noticeably across sentiment regimes.
 
-Fear conditions were associated with:
-- larger average trade sizes
+Fear conditions showed:
+- higher trade frequency
+- larger trade sizes
 - stronger long positioning
-- higher trading activity
+- higher average profitability
 
-Meanwhile, Greed conditions showed comparatively lower profitability and weaker trading consistency.
+This suggests that market sentiment strongly influenced participation and risk-taking behavior.
 
-These behavioral shifts suggest that trader psychology and market sentiment significantly influenced trading decisions, positioning behavior, and overall market participation.
+**Evidence Pointer:**  
+- Sentiment-wise trade count table  
+- Long ratio and trade size comparison tables
 
 ---
 
 # Strategy Recommendations
 
-Based on the behavioral and performance analysis, the following strategy recommendations are proposed to improve trader decision-making and risk management under different market sentiment conditions.
-
----
-
 ## Recommendation 1 — Reduce Aggressive Long Exposure During Fear Conditions
 
-The analysis showed that traders significantly increased long positioning during Fear and Extreme Fear periods. However, traders with stronger long bias generally achieved weaker profitability and lower win rates compared to more balanced or short-biased traders.
+Fear periods showed the strongest long bias (~0.59–0.62), while traders with excessive long exposure generally achieved weaker profitability and lower win rates.
 
-Rule of Thumb:
-During Fear market conditions, traders should avoid aggressively increasing directional long exposure and instead maintain tighter risk controls, smaller directional bias, and more balanced positioning strategies.
+### Rule of Thumb:
+During Fear-driven markets:
+- avoid concentrated long exposure
+- maintain balanced positioning
+- apply tighter risk controls
+
+**Supporting Evidence:**  
+- Non-profitable trader long ratio: ~0.592  
+- Profitable trader long ratio: ~0.483
 
 ---
 
-## Recommendation 2 — Favor Consistent Trading Activity Over Oversized Positions
+## Recommendation 2 — Prioritize Consistent Execution Over Oversized Trades
 
-High-activity traders achieved substantially higher profitability and stronger win rates despite using smaller average trade sizes than low-activity traders.
+High-activity traders achieved significantly stronger profitability despite using smaller average trade sizes.
 
-Rule of Thumb:
-Traders may benefit more from consistent market participation and diversified execution rather than relying on infrequent oversized trades. During volatile market periods, maintaining moderate position sizing with higher execution discipline may improve trading consistency.
+### Rule of Thumb:
+During volatile markets:
+- favor consistent trade execution
+- maintain moderate position sizing
+- avoid infrequent oversized positions
 
-These recommendations are intended as behavioral risk-management guidelines derived from historical trading and sentiment patterns observed in the dataset.
+This may improve trading consistency while reducing concentration risk.
+
+**Supporting Evidence:**  
+- High-activity trader PnL: ~11,618  
+- Low-activity trader PnL: ~1,662
 
 ---
 
@@ -203,13 +235,25 @@ trader-performance-vs-market-sentiment/
 git clone <repository-link>
 ```
 
-## 2. Open the Notebook
+## 2. Install Required Libraries
+
+```bash
+pip install pandas numpy matplotlib seaborn jupyter
+```
+
+## 3. Download the Datasets
+
+Download both datasets from the links provided in the README and place them in the project directory.
+
+## 4. Open the Notebook
 
 ```bash
 jupyter notebook trader_sentiment_analysis.ipynb
 ```
 
-## 3. load dataset files in notebook
+## 5. Run All Cells
+
+Execute the notebook cells sequentially to reproduce the analysis, charts, and findings.
 
 ---
 

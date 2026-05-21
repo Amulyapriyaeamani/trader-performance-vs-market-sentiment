@@ -174,6 +174,8 @@ These recommendations are intended as behavioral risk-management guidelines deri
 ```text
 primetrade-trader-sentiment-analysis/
 │
+├── fear_greed_index.csv
+├── historical_data.csv
 ├── trader_sentiment_analysis.ipynb
 ├── README.md
 ├── requirements.txt

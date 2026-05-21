@@ -190,7 +190,6 @@ trader-performance-vs-market-sentiment/
 │
 ├── trader_sentiment_analysis.ipynb
 ├── README.md
-├── requirements.txt
 └── outputs/
 ```
 
@@ -204,17 +203,13 @@ trader-performance-vs-market-sentiment/
 git clone <repository-link>
 ```
 
-## 2. Install Required Libraries
-
-```bash
-pip install -r requirements.txt
-```
-
-## 3. Open the Notebook
+## 2. Open the Notebook
 
 ```bash
 jupyter notebook trader_sentiment_analysis.ipynb
 ```
+
+## 3. load dataset files in notebook
 
 ---
 

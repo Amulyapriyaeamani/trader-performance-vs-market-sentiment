@@ -204,6 +204,10 @@ This may improve trading consistency while reducing concentration risk.
 
 ---
 
+**Limitation**: Results are based on historical correlations and do not imply causation. Market volatility may be a confounding factor in sentiment-linked performance.
+
+---
+
 # Tools & Libraries Used
 
 - Python

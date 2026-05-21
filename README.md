@@ -41,6 +41,18 @@ Contains:
 - closed pnl
 - trading behavior metrics
 
+# Dataset Access
+
+Due to file size limitations, the raw datasets are not included directly in this repository.
+
+Datasets can be downloaded from the original sources below:
+
+## Bitcoin Fear & Greed Dataset
+[<google-drive-link>](https://drive.google.com/file/d/1PgQC0tO8XN-wqkNyghWc_-mnrYv_nhSf/view?usp=sharing)
+
+## Hyperliquid Historical Trader Dataset
+[<google-drive-link>](https://drive.google.com/file/d/1IAfLZwu6rJzyWKgBToqwSmmVYU6VbjVs/view?usp=sharing)
+  
 ---
 
 # Methodology
@@ -140,19 +152,21 @@ Based on the behavioral and performance analysis, the following strategy recomme
 
 ---
 
-## Recommendation 1 — Reduce Directional Bias During Fear Conditions
+## Recommendation 1 — Reduce Aggressive Long Exposure During Fear Conditions
 
-The analysis showed that traders increased long positioning significantly during Fear and Extreme Fear market conditions. However, traders with excessive long exposure generally demonstrated weaker profitability and lower win rates compared to more balanced or short-biased traders.
+The analysis showed that traders significantly increased long positioning during Fear and Extreme Fear periods. However, traders with stronger long bias generally achieved weaker profitability and lower win rates compared to more balanced or short-biased traders.
 
-To improve trading consistency, traders should avoid overcommitting to directional long exposure during fearful market environments and instead maintain more balanced positioning strategies with tighter risk controls.
+Rule of Thumb:
+During Fear market conditions, traders should avoid aggressively increasing directional long exposure and instead maintain tighter risk controls, smaller directional bias, and more balanced positioning strategies.
 
 ---
 
-## Recommendation 2 — Favor Consistent Participation Over Large Position Sizing
+## Recommendation 2 — Favor Consistent Trading Activity Over Oversized Positions
 
-High-activity traders achieved substantially stronger profitability and higher win rates despite using smaller average trade sizes compared to low-activity traders.
+High-activity traders achieved substantially higher profitability and stronger win rates despite using smaller average trade sizes than low-activity traders.
 
-This suggests that consistent market participation, diversified execution, and controlled position sizing may be more effective than infrequent large trades. Traders should prioritize disciplined execution and gradual exposure management rather than relying on oversized positions.
+Rule of Thumb:
+Traders may benefit more from consistent market participation and diversified execution rather than relying on infrequent oversized trades. During volatile market periods, maintaining moderate position sizing with higher execution discipline may improve trading consistency.
 
 These recommendations are intended as behavioral risk-management guidelines derived from historical trading and sentiment patterns observed in the dataset.
 
@@ -174,8 +188,6 @@ These recommendations are intended as behavioral risk-management guidelines deri
 ```text
 primetrade-trader-sentiment-analysis/
 │
-├── fear_greed_index.csv
-├── historical_data.csv
 ├── trader_sentiment_analysis.ipynb
 ├── README.md
 ├── requirements.txt
